@@ -48,7 +48,8 @@ $('#hour17',).on("click", function (){
   localStorage.setItem('hour17', JSON.stringify(this));
   });
 
-  
+const h9 = JSON.parse(localStorage.getItem('hour9'));
+console.log(h9);
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
