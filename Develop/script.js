@@ -2,7 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var timeDisplayEl = $('#currentDay');
-
+var saveButton = $('.saveBtn');
 
 $(document).ready(function () {
   // TODO: Add a listener for click events on the save button. This code should
@@ -12,44 +12,21 @@ $(document).ready(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
- $('#hour9',).on("click", function (){
-localStorage.setItem('hour9', JSON.stringify(this));
- });
+$(saveButton).on("click", function (){
 
-$('#hour10',).on("click", function (){
-localStorage.setItem('hour10', JSON.stringify(this));
-  });
+var value = $(this).siblings(".description").val();
 
-$('#hour11',).on("click", function (){
-localStorage.setItem('hour11', JSON.stringify(this));
-  });
+var timeBlockId = $(this).parent().attr("id");
 
-$('#hour12',).on("click", function (){
-localStorage.setItem('hour12', JSON.stringify(this));
-  });
+console.log(value, timeBlockId)
+console.log(localStorage)
 
- $('#hour13',).on("click", function (){
-localStorage.setItem('hour13', JSON.stringify(this));
-  });
+localStorage.setItem(timeBlockId, value);
+})
 
- $('#hour14',).on("click", function (){
-  localStorage.setItem('hour14', JSON.stringify(this));
-   });
 
-$('#hour15',).on("click", function (){
-  localStorage.setItem('hour15', JSON.stringify(this));
-  });
 
- $('#hour16',).on("click", function (){
-  localStorage.setItem('hour16', JSON.stringify(this));
-  });
 
-$('#hour17',).on("click", function (){
-  localStorage.setItem('hour17', JSON.stringify(this));
-  });
-
-const h9 = JSON.parse(localStorage.getItem('hour9'));
-console.log(h9);
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -60,6 +37,18 @@ console.log(h9);
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
+
+  function gettodos() {
+    var todos = localStorage.getItem(value);
+    if (todos) {
+      todos = JSON.parse(todos);
+    } else {
+      todos = [];
+    }
+    return todos;
+  }
+  gettodos()
+
   //
   // TODO: Add code to display the current date in the header of the page.
   function displayTime() {
