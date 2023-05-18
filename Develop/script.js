@@ -12,6 +12,44 @@ $(document).ready(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
+ $('#hour9',).on("click", function (){
+localStorage.setItem('hour9', JSON.stringify(this));
+ });
+
+$('#hour10',).on("click", function (){
+localStorage.setItem('hour10', JSON.stringify(this));
+  });
+
+$('#hour11',).on("click", function (){
+localStorage.setItem('hour11', JSON.stringify(this));
+  });
+
+$('#hour12',).on("click", function (){
+localStorage.setItem('hour12', JSON.stringify(this));
+  });
+
+ $('#hour13',).on("click", function (){
+localStorage.setItem('hour13', JSON.stringify(this));
+  });
+
+ $('#hour14',).on("click", function (){
+  localStorage.setItem('hour14', JSON.stringify(this));
+   });
+
+$('#hour15',).on("click", function (){
+  localStorage.setItem('hour15', JSON.stringify(this));
+  });
+
+ $('#hour16',).on("click", function (){
+  localStorage.setItem('hour16', JSON.stringify(this));
+  });
+
+$('#hour17',).on("click", function (){
+  localStorage.setItem('hour17', JSON.stringify(this));
+  });
+
+  
+
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
