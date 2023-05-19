@@ -35,4 +35,4 @@ THEN the saved events persist
 
 https://lilac27.github.io/Work-Day-Scheduler/
 
-![](images/Work-Day-Scheduler%20pic.png)
+![](images/Work-Day-Scheduler.png)
