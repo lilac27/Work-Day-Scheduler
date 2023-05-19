@@ -41,13 +41,27 @@ localStorage.setItem(timeBlockId, value);
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   //
-  var time = dayjs().hour();
+  var time = dayjs().format('H');
+  console.log(time);
 
   $(".time-block").each(function(){
     console.log($(this).attr("id"));
+
+// write function that compares time in id to time given by dayjs
+
+  var idHour = parseInt($(this).attr("id").split('-')[1]);
+
+  if (idHour < time) {
+    $(this).addClass("past");
+  }
+  else if (idHour === time){
+    $(this).addClass("present");
+  }
+  else 
+    $(this).addClass("future");
   });
 
-  
+
 
 
 
